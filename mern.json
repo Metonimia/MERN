@@ -46,7 +46,7 @@
         }
       ]
     },
-     {
+    {
       "name": "arrow-s",
       "description": "Generates a functional react component in shared components",
       "usage": "arrow-s [component-name]",
