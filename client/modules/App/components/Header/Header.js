@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react";
 import { Link } from "react-router";
 import { FormattedMessage } from "react-intl";
-import Nav from "./components/Nav/Nav";
+import Nav from "../Nav/Nav";
 
 // Import Style
 import styles from "./Header.css";

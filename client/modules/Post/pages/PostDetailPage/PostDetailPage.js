@@ -1,24 +1,22 @@
 import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux";
 import Helmet from "react-helmet";
-import { FormattedMessage } from "react-intl";
 import { getShowEditPost } from '../../../App/AppReducer';
-import { fetchPost, editPostRequest } from '../../PostActions';
 import { toggleEditPost } from '../../../App/AppActions';
+import { fetchPost, editPostRequest } from "../../PostActions";
 import { injectIntl, FormattedMessage } from 'react-intl';
-
-// Import Style
+import { getPost } from "../../PostReducer";
 import styles from "../../components/PostListItem/PostListItem.css";
 
-// Import Actions
-import { fetchPost } from "../../PostActions";
+const handleInputChange = (event) => {
+  const { value, name } = event.target;
 
-// Import Selectors
-import { getPost } from "../../PostReducer";
+  this.setState({
+    [name]: value,
+  });
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(PostDetailPage));
-
-export class PostDetailPage extends React.Component {
+export class PostDetailPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -70,14 +68,6 @@ export class PostDetailPage extends React.Component {
   }
 }
 
-handleInputChange = (event) => {
-  const { value, name } = event.target;
-
-  this.setState({
-    [name]: value,
-  });
-};
-
 function mapDispatchToProps(dispatch, props) {
   return {
     toggleEditPost: () => dispatch(toggleEditPost()),
@@ -97,6 +87,7 @@ function mapStateToProps(state, props) {
     post: getPost(state, props.params.cuid),
     showEditPost: getShowEditPost(state),
   };
+}
 
 PostDetailPage.propTypes = {
   post: PropTypes.shape({
@@ -117,3 +108,5 @@ PostDetailPage.propTypes = {
   toggleEditPost: PropTypes.func.isRequired,
   editPostRequest: PropTypes.func.isRequired,
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(PostDetailPage));

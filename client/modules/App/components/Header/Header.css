@@ -33,12 +33,22 @@
   float: right;
 }
 
-.topnav a {
+.topnav {
+  padding-left: 5vw;
+}
+
+.topnav li {
   float: left;
+  display: inline-block;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+  padding: 14px 22px;
   font-size: 17px;
+  cursor: pointer;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .language-switcher {
