@@ -1,20 +1,27 @@
 import React, { PropTypes } from "react";
+import { Link } from "react-router";
+import { injectIntl, FormattedMessage } from 'react-intl';
 
 import styles from "../Header/Header.css";
 
 export function Nav(props, context) {
-
 	return (
 		<div className={styles["topnav"]}>
 			<ul>
 				<li id={styles["yolo"]}>
-					<a href="#">Home</a>
+					<Link to="/">
+						<FormattedMessage id="navHome" />
+					</Link>
 				</li>
 				<li className={styles["topli"]}>
-					<a href="#">Posts</a>
+					<Link to="/">
+						<FormattedMessage id="navPost" />
+					</Link>
 				</li>
 				<li className={styles["topli"]}>
-					<a href="#">About</a>
+					<Link to="/about">
+						<FormattedMessage id="navAbout" />
+					</Link>
 				</li>
 			</ul>
 		</div>

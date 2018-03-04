@@ -63,6 +63,7 @@ export class PostDetailPage extends Component {
             ? this.renderPostForm()
             : this.renderPost()
         }
+        <a className={styles['like-post-button']} href="#" onClick={this.props.toggleThumbsUpPost}></a>
       </div>
     );
   }
