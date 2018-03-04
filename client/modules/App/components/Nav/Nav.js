@@ -9,12 +9,12 @@ export function Nav(props, context) {
 		<div className={styles["topnav"]}>
 			<ul>
 				<li id={styles["yolo"]}>
-					<Link to="/">
+					<Link to="/home">
 						<FormattedMessage id="navHome" />
 					</Link>
 				</li>
 				<li className={styles["topli"]}>
-					<Link to="/">
+					<Link to="/posts">
 						<FormattedMessage id="navPost" />
 					</Link>
 				</li>
