@@ -14,7 +14,7 @@ export function Nav(props, context) {
 					</Link>
 				</li>
 				<li className={styles["topli"]}>
-					<Link to="/posts">
+					<Link to="/">
 						<FormattedMessage id="navPost" />
 					</Link>
 				</li>
